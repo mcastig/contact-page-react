@@ -1,0 +1,95 @@
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 0 24px 60px;
+}
+
+/* Top-left logo header */
+.header {
+  padding: 28px 0 0;
+  display: flex;
+  align-items: center;
+}
+
+/* Center main content vertically */
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  padding-top: 32px;
+  padding-bottom: 20px;
+}
+
+/* Hero text */
+.hero {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 780px;
+}
+
+.heading {
+  font-family: var(--font);
+  font-size: 4rem; /* 64px */
+  font-weight: 800;
+  color: var(--color-white);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.subheading {
+  font-family: var(--font);
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Tablet: 1024px */
+@media (max-width: 1024px) {
+  .heading {
+    font-size: 3.5rem;
+  }
+}
+
+/* Mobile: 640px */
+@media (max-width: 640px) {
+  .page {
+    padding: 0 16px 48px;
+  }
+
+  .header {
+    padding-top: 24px;
+  }
+
+  .main {
+    gap: 28px;
+    padding-top: 24px;
+  }
+
+  .hero {
+    gap: 12px;
+  }
+
+  .heading {
+    font-size: 2.5rem; /* ~40px */
+    letter-spacing: -0.01em;
+  }
+
+  .subheading {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  /* Remove the <br> line break on mobile via a small trick */
+  .subheading br {
+    display: none;
+  }
+}
