@@ -1,0 +1,180 @@
+.card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(2px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 24px;
+  padding: 32px;
+  width: 100%;
+  max-width: 780px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* 2-column grid for Name+Email and Size+Subject */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* Message field — full width */
+.messageField {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.label {
+  font-family: var(--font);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-white);
+  letter-spacing: 0.01em;
+}
+
+.textarea {
+  font-family: var(--font);
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-dark);
+  background: rgba(255, 255, 255, 0.92);
+  border: 2px solid transparent;
+  border-radius: 12px;
+  padding: 16px 20px;
+  width: 100%;
+  resize: none;
+  outline: none;
+  transition: border-color 0.2s ease, background 0.2s ease;
+  line-height: 1.5;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.textarea::placeholder {
+  color: var(--color-light-grey);
+  font-weight: 400;
+}
+
+.textarea:focus {
+  border-color: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.97);
+}
+
+.textareaError {
+  border-color: #f87171;
+  background: rgba(255, 255, 255, 0.97);
+}
+
+.textareaError:focus {
+  border-color: #f87171;
+}
+
+.errorMsg {
+  font-family: var(--font);
+  font-size: 0.8125rem; /* 13px */
+  font-weight: 500;
+  color: #fca5a5;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.errorMsg::before {
+  content: '!';
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #f87171;
+  color: white;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.submitBtn {
+  font-family: var(--font);
+  font-size: 1.25rem; /* 20px */
+  font-weight: 600;
+  color: var(--color-primary);
+  background: var(--color-white);
+  border: none;
+  border-radius: 12px;
+  padding: 18px 24px;
+  width: 100%;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+  letter-spacing: 0.01em;
+}
+
+.submitBtn:hover {
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+  transform: translateY(-1px);
+}
+
+.submitBtn:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* Success state */
+.success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 24px 0;
+  text-align: center;
+}
+
+.successTitle {
+  font-family: var(--font);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-white);
+}
+
+.successText {
+  font-family: var(--font);
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 420px;
+  line-height: 1.6;
+}
+
+.backLink {
+  font-family: var(--font);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.7);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px 0;
+  margin-top: 8px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s ease;
+}
+
+.backLink:hover {
+  color: var(--color-white);
+}
+
+/* Responsive: single column on mobile */
+@media (max-width: 640px) {
+  .card {
+    border-radius: 20px;
+    padding: 24px 20px;
+    gap: 16px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
