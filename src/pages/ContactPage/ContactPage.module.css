@@ -7,7 +7,7 @@
 
 /* Top-left logo header */
 .header {
-  padding: 28px 0 0;
+  padding: 20px 28px;
   display: flex;
   align-items: center;
 }
@@ -35,7 +35,7 @@
 
 .heading {
   font-family: var(--font);
-  font-size: 4rem; /* 64px */
+  font-size: 4.5rem;
   font-weight: 800;
   color: var(--color-white);
   line-height: 1.1;
@@ -45,11 +45,11 @@
 
 .subheading {
   font-family: var(--font);
-  font-size: 1.25rem;
+  font-size: 2rem;
   font-weight: 500;
   color: rgba(255, 255, 255, 0.85);
   line-height: 1.5;
-  margin: 0;
+  margin-bottom: 35px;
 }
 
 /* Tablet: 1024px */
@@ -84,7 +84,7 @@
   }
 
   .subheading {
-    font-size: 1rem;
+    font-size: 2rem;
     line-height: 1.6;
   }
 
