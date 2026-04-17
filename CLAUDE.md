@@ -28,8 +28,14 @@ This is a React 19 + TypeScript + Vite single-page app. The entry point is `src/
 
 ## Testing
 
-Tests use **Vitest** with **React Testing Library** and **jsdom**. Configuration lives in `vite.config.ts` under the `test` key. The setup file is `src/test/setup.ts` (imports `@testing-library/jest-dom`).
+Tests use **Vitest** with **React Testing Library** and **jsdom**. Configuration lives in `vitest.config.ts` (separate from `vite.config.ts` to avoid TypeScript errors during `tsc -b`). The setup file is `src/test/setup.ts` (imports `@testing-library/jest-dom`).
 
 Test files are co-located with their source files (`*.test.tsx`). Coverage is collected by V8 and output to `coverage/` (HTML + LCOV).
 
 Current coverage: **100%** statements, branches, functions, and lines across all source files.
+
+## Deployment
+
+Deployed to GitHub Pages at https://mcastig.github.io/contact-page-react/
+
+Every push to `main` triggers `.github/workflows/deploy.yml`, which runs tests, builds via `npm run build`, and deploys the `dist/` artifact using the official `actions/deploy-pages` action. Vite is configured with `base: '/contact-page-react/'` so asset paths resolve correctly under the repository sub-path.
